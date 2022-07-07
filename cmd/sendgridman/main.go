@@ -114,8 +114,8 @@ func (tf templateFileStore) Store(mt mailTemplate, includePlain, overwriteExisti
 		htmlFileName := filepath.Join(tf.baseDir, fmt.Sprintf("%s.html", mt.Name))
 		plainFileName := filepath.Join(tf.baseDir, fmt.Sprintf("%s.txt", mt.Name))
 		if allVersions {
-			htmlFileName = filepath.Join(tf.baseDir, fmt.Sprintf("%s__%s.html", mt.Name, tplVer.ID))
-			plainFileName = filepath.Join(tf.baseDir, fmt.Sprintf("%s__%s.txt", mt.Name, tplVer.ID))
+			htmlFileName = filepath.Join(tf.baseDir, fmt.Sprintf("%s__%s__%s.html", mt.Name, tplVer.Name, tplVer.ID))
+			plainFileName = filepath.Join(tf.baseDir, fmt.Sprintf("%s__%s__%s.txt", mt.Name, tplVer.Name, tplVer.ID))
 		}
 
 		if _, err := os.Stat(htmlFileName); err == nil {
